@@ -8,19 +8,19 @@ def download_answer_files(cloud_url, path_to_data_folder, respondent_index):
              download_url=f"{cloud_url}/{original_name}"
              new_name = f"answers_respondent_{i}.txt"
              local_path = os.path.join(path_to_data_folder, new_name)
-        try:
-         file_data = urllib.request.urlopen(download_url).read()
-         with open(local_path, "wb") as f:
-                f.write(file_data)
-         print(f"Downloaded: {new_name}")  
-        except:
+             try:
+                 file_data = urllib.request.urlopen(download_url).read()
+                 with open(local_path, "wb") as f:
+                     f.write(file_data)
+                 print(f"Downloaded: {new_name}")  
+             except:
              
-            print(f"Failed to download a{i}.txt")
+                    print(f"Failed to download a{i}.txt")
 
         
     
 def collate_answer_files(data_folder_path):
-    import os
+    
     os.makedirs("output", exist_ok=True)
     output_path = os.path.join("output", "collated_answers.txt")
     with open(output_path, 'w', encoding='utf-8') as outfile:
