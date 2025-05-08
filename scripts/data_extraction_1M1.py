@@ -1,56 +1,34 @@
 
 
-def extract_answers_sequence(file_path):
-    f = open(file_path, "r")
-
-    lines = [line.strip() for line in f.readlines()]
-    answers = []
-    
-    i = 0
-
-    while i < len(lines):
-        if lines[i].startswith("Question"):
-                options = lines[i+1:i+5]
-                answer = 0
-                for j in range(4):
-                    if "[x]" in options[j]:
-                        answer = j+1
-                        break
-                answers.append(answer)
-                i+=5
-        else:
-            i+=1
-    f.close()
-
-    return answers
 
 
 def extract_answers_sequence(string_file_path):
 
     answers = []   # creates an empty list to store the answer values 
     current_answer = 0 
-
-    with open(string_file_path, 'r', encoding = 'utf-8') as file:
-        survey = file.read()      # opens the file to read only 
-    
-    text = survey[i].strip()
     i = 0 
 
-    while i < len(survey):
-        
+    with open(string_file_path, 'r', encoding = 'utf-8') as file:
+        survey = file.readlines()      # opens the file to read only 
+    
+    
 
-        if text[i].startswith("Question"):
-            answers.append(current_answer)
+    while i < len(survey):
+        text = survey[i].strip()
+
+        if text.startswith("Question"):
             current_answer = 0   # if a line starts with "Question", current answer remains 0 
             question_block = survey[i+1:i+5]
 
             k = 0
 
-            for k in range(4):
-                question = question_block.strip()
-                if question.startswith('[x]'):
+            for answer_line in question_block:
+                answer_line = answer_line.strip()
+                if answer_line.startswith('[x]'):
                     current_answer = 1 + k 
-                
+                    break
+                k +=1
+
             answers.append(current_answer)
             i += 5
     
@@ -59,8 +37,9 @@ def extract_answers_sequence(string_file_path):
 
     return answers
 
-file_name = 'data/answers_respondent_2.txt'
-answers = extract_answers_sequence(file_path)
+string_file_path = "data/answers_respondent_2.txt"
+
+answers = extract_answers_sequence(string_file_path)
 print(answers)
 
 
