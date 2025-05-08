@@ -6,7 +6,7 @@ def extract_answers_sequence(string_file_path):
 
     answers = []   # creates an empty list to store the answer values 
 
-    with open(string_file_path, 'r', 'utf-8') as file:
+    with open(string_file_path, 'r', encoding = 'utf-8') as file:
         survey = file.read()      # opens the file to read only 
         current_answer = 0 
 
