@@ -62,9 +62,7 @@ def extract_answers_sequence(string_file_path):
 
 
 
-file_path = "data/answers_respondent_2.txt"
-answers = extract_answers_sequence(file_path)
-print(answers)
+
 
 list_answers = extract_answers_sequence(string_file_path)
 def write_answers_sequence(list_answers, int_n):
