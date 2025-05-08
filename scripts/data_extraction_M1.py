@@ -18,6 +18,8 @@ def extract_answers_sequence(string_file_path):
                 answers.append(current_answer)
                 current_answer = 0   # if a line starts with "Question", our current answer remains 0 
 
+                for text in 
+
             elif text.startswith('[x]'):     # if line starts with "[x]", it will split again at a fullstop '.'
                 try: 
                     answer_box = answer_box.split('.')
