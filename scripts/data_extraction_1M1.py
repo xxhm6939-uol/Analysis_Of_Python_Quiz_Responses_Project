@@ -59,6 +59,9 @@ def extract_answers_sequence(string_file_path):
 
     return answers
 
+file_name = 'data/answers_respondent_2.txt'
+answers = extract_answers_sequence(file_path)
+print(answers)
 
 
 
