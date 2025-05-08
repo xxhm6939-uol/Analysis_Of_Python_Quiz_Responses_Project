@@ -14,10 +14,10 @@ def extract_answers_sequence(string_file_path):
             text = survey.strip('.')      # splits each line into "strips"
 
             for i in range(len(text)):
-                if text[i].startswith("Question"):
+                if text.startswith("Question"):
                     answers.append(current_answer)
                     current_answer = 0   # if a line starts with "Question", current answer remains 0 
-                    question_block = text[i:1,i:5]
+                    question_block = text[i+1:i+5]
 
                     for k in question_block:
                         if text.startswith('[x]'):
@@ -25,12 +25,12 @@ def extract_answers_sequence(string_file_path):
                             answer_number = int(answer_box[1][0])   # extracts the first digit after the fullstop (number of the answer)
                             answers[current_answer] = answer_number   # changes current answer's value from 0 to answer number 
                     
-                    answers.append(current_answer)   # creates a list of all answer numbers
-                    return answer
+            answers.append(current_answer)   # creates a list of all answer numbers
+            return answer
 
 
 
- string_file_path = r"C:\Users\user\Downloads\Analysis_Of_Python_Quiz_Responses_Project\data\answers_respondent_2.txt
+string_file_path = r"C:\Users\user\Downloads\Analysis_Of_Python_Quiz_Responses_Project\data\answers_respondent_2.txt"
     
 
 list_answers = extract_answers_sequence(string_file_path)
