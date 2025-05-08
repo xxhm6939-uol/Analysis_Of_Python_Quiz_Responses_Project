@@ -7,12 +7,13 @@ def extract_answers_sequence(string_file_path):
     with open(string_file_path, 'r', encoding = 'utf-8') as file:
         survey = file.read()      # opens the file to read only 
     
+    text = survey[i].strip()
     i = 0 
 
     while i < len(survey):
-        text = survey[i].strip()
+        
 
-        if text.startswith("Question"):
+        if text[i].startswith("Question"):
             answers.append(current_answer)
             current_answer = 0   # if a line starts with "Question", current answer remains 0 
             question_block = survey[i+1:i+5]
@@ -20,8 +21,10 @@ def extract_answers_sequence(string_file_path):
             k = 0
 
             for k in range(4):
-                if text.startswith('[x]'):
+                if question_block.startswith('[x]'):
                     current_answer = 1 + k 
+                
+                answers.append(current_answer)
                 k += 1
                 
             i += 5
@@ -32,8 +35,9 @@ def extract_answers_sequence(string_file_path):
     answers.append(current_answer)   # creates a list of all answer numbers
     return answers
 
-
-
+string_file_path = "data/answers_respondent_2.txt"
+answers = extract_answers_sequence(string_file_path)
+print(answers)
 
 list_answers = extract_answers_sequence(string_file_path)
 def write_answers_sequence(list_answers, int_n):
