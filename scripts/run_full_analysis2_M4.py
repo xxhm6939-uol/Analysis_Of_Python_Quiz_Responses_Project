@@ -1,4 +1,4 @@
-import scripts.data_extraction_1M1 as M1
+import data_extraction_1M1 as M1
 import data_preparation_M2 as M2
 import data_analysis_M3 as M3
 

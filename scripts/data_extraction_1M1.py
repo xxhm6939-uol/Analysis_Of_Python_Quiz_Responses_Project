@@ -30,7 +30,7 @@ def extract_answers_sequence(string_file_path):
 
 
 
-
+ string_file_path = r"C:\Users\user\Downloads\Analysis_Of_Python_Quiz_Responses_Project\data\answers_respondent_2.txt
     
 
 list_answers = extract_answers_sequence(string_file_path)
