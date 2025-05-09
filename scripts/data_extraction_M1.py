@@ -1,7 +1,5 @@
 
 
-
-
 def extract_answers_sequence(string_file_path):
 
     answers = []   # creates an empty list to store the answer values 
@@ -10,7 +8,6 @@ def extract_answers_sequence(string_file_path):
 
     with open(string_file_path, 'r', encoding = 'utf-8') as file:
         survey = file.readlines()      # opens the file to read only 
-    
     
 
     while i < len(survey):
@@ -48,11 +45,10 @@ print(answers)
 
 list_answers = extract_answers_sequence(string_file_path)
 def write_answers_sequence(list_answers, int_n):
-    list_answers = extract_answers_sequence(string_file_path)
-    new_text_file = f"answers_list_respondent_{int_n},.txt"
+    new_text_file = f"answers_list_respondent_{int_n}.txt"
 
     with open(new_text_file, 'w') as file:
-        f.write(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
+        file.write(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
     
     print(f"Answers saved to text file!")
 
