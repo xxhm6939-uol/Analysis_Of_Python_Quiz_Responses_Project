@@ -48,7 +48,7 @@ def write_answers_sequence(list_answers, int_n):
     new_text_file = f"answers_list_respondent_{int_n}.txt"
 
     with open(new_text_file, 'w') as file:
-        file.write(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
+        file.writelines(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
     
     print(f"Answers saved to text file!")
 
