@@ -8,7 +8,7 @@ def extract_answers_sequence(string_file_path):
 
     with open(string_file_path, 'r', encoding = 'utf-8') as file:
         survey = file.readlines()      # opens the file to read only 
-    
+
 
     while i < len(survey):
         text = survey[i].strip()
@@ -21,7 +21,7 @@ def extract_answers_sequence(string_file_path):
 
             for answer_line in question_block:
                 answer_line = answer_line.strip()
-                if answer_line.startswith('[x]'):
+                if '[x]' in answer_line:
                     current_answer = 1 + k 
                     break
                 k +=1
@@ -39,12 +39,24 @@ def extract_answers_sequence(string_file_path):
 #list_answers = extract_answers_sequence(string_file_path)
 #print(list_answers)
 
+<<<<<<< HEAD
 def write_answers_sequence(list_answers, i):
     new_text_file = f"answers_list_respondent_{i}.txt"
 
+=======
+#list_answers = extract_answers_sequence("data/raw_answers/answers_respondent_1.txt")
+def write_answers_sequence(list_answers, int_n):
+    new_text_file = f"data/answers_list_respondent_{int_n}.txt"
+>>>>>>> c5105befb533baca60e6671049c49deb718e1f21
     with open(new_text_file, 'w') as file:
         file.writelines(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
     
     print(f"Answers saved to text file!")
 
-
+for i in range(1, 26):
+    input_path = f"data/raw_answers/answers_respondent_{i}.txt"
+    answers = extract_answers_sequence(input_path)
+    print(f"Respondent {i}: extracted {len(answers)} answers")
+    write_answers_sequence(answers, i)
+answers = extract_answers_sequence("data/raw_answers/answers_respondent_2.txt")
+print(answers)
