@@ -12,16 +12,8 @@ def run_full_analysis():
     respondent_index = 25
     plot_mode = 1,2  
 
-<<<<<<< HEAD
-    print("Step 2: Extracting structured answer seq")
-    for i in range(1,26):
-        input_file = f"{data_folder}/answers_respondent_{i}.txt"
-        answers = M1.extract_answers_sequence(input_file)
-        M1.write_answers_sequence(list_answers, i)
-=======
     print("="*50)
     download_answer_files(cloud_url, data_folder, respondent_index)
->>>>>>> c5105befb533baca60e6671049c49deb718e1f21
 
     for i in range(1, respondent_index + 1):
         input_file = os.path.join(data_folder, f"answers_respondent_{i}.txt")
