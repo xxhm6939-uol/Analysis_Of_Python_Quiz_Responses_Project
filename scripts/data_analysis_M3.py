@@ -11,8 +11,12 @@ def m3(collated_answers_path):
             # turn text to string
             lines = block.strip().splitlines()
             # turn string to integers
-            sequence = [int(x) for x in lines]
-            sequences.append(sequence)
+            sequence = [int(x.strip()) for x in lines if x.strip().isdigit()]
+            if len(sequence)==100:
+        
+                sequences.append(sequence)
+            else:
+                print("incomplete sequence")
     return sequences
     
 def generate_means_sequence(sequences):
