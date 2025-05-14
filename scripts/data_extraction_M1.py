@@ -35,9 +35,9 @@ def extract_answers_sequence(string_file_path):
     return answers
 
 
-
-
-
+#string_file_path = "data/answers_respondent_2.txt"
+#list_answers = extract_answers_sequence(string_file_path)
+#print(list_answers)
 
 def write_answers_sequence(list_answers, i):
     new_text_file = f"answers_list_respondent_{i}.txt"

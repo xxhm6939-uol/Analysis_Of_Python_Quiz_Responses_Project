@@ -23,8 +23,8 @@ def run_full_analysis(cloud_url, data_folder, output_folder, n=1):
     for i in range(1, 26):
         input_file = f"{data_folder}/answers_respondent_{i}.txt"
         if os.path.exists(input_file):
-            answers = M1.extract_answers_sequence(input_file)
-            M1.write_answers_sequence(answers, i)
+            list_answers = M1.extract_answers_sequence(input_file)
+            M1.write_answers_sequence(list_answers, i)
         else:
             print(f"⚠️ Missing file: {input_file}")
 
