@@ -41,7 +41,7 @@ def visualize_data(collated_answers_path, n):
     # draw every one(4 mumber) answer line.
     elif n == 2:
         for seq in sequences:
-            plt.plot(range(1, 101), seq, alpha=0.3)
+            plt.plot(range(1, 101), seq)
         plt.title("All Respondents’ Answer Sequences")
         plt.xlabel("Question Number")
         plt.ylabel("Answer (1–4 or 0)")
@@ -52,3 +52,4 @@ def visualize_data(collated_answers_path, n):
     plt.show()
 from data_analysis_M3 import visualize_data
 visualize_data("output/collated_answers.txt", 1)
+visualize_data("output/collated_answers.txt", 2)
