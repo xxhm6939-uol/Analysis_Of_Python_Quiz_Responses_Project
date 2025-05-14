@@ -13,7 +13,7 @@ def run_full_analysis(cloud_url, data_folder, output_folder, n=1):
     for i in range(1,26):
         input_file = f"{data_folder}/answers_respondent_{i}.txt"
         answers = M1.extract_answers_sequence(input_file)
-        M1.write_answers_sequence(answers, i)
+        M1.write_answers_sequence(list_answers, i)
 
     print("Step 3: Analysing and visualising data")
     means_sequence = M3.generate_means_sequence(collated_file)
