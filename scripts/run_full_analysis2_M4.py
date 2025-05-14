@@ -10,7 +10,7 @@ def run_full_analysis():
     structured_folder = "data"
     collated_file_path = "output/collated_answers.txt"
     respondent_index = 25
-    plot_mode = 1  
+    plot_mode = 1,2  
 
     print("="*50)
     download_answer_files(cloud_url, data_folder, respondent_index)
