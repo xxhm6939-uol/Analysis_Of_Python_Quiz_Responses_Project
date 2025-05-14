@@ -1,6 +1,10 @@
 import os
 import subprocess
 
+import sys
+
+# dowmload gdown
+subprocess.check_call([sys.executable, "-m", "pip", "install", "gdown"])
 def download_answer_files(cloud_url, path_to_data_folder, respondent_index):
 
     os.makedirs(path_to_data_folder, exist_ok=True)
