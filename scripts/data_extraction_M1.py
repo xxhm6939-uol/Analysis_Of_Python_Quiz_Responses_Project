@@ -35,10 +35,19 @@ def extract_answers_sequence(string_file_path):
     return answers
 
 
+#string_file_path = "data/answers_respondent_2.txt"
+#list_answers = extract_answers_sequence(string_file_path)
+#print(list_answers)
 
+<<<<<<< HEAD
+def write_answers_sequence(list_answers, i):
+    new_text_file = f"answers_list_respondent_{i}.txt"
+
+=======
 #list_answers = extract_answers_sequence("data/raw_answers/answers_respondent_1.txt")
 def write_answers_sequence(list_answers, int_n):
     new_text_file = f"data/answers_list_respondent_{int_n}.txt"
+>>>>>>> c5105befb533baca60e6671049c49deb718e1f21
     with open(new_text_file, 'w') as file:
         file.writelines(f"{answer}\n" for answer in list_answers)    # sets new name to the text file containing answers list
     
