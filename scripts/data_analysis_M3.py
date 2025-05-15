@@ -51,5 +51,5 @@ def visualize_data(collated_answers_path, n):
     plt.grid(True)
     plt.show()
 from data_analysis_M3 import visualize_data
-visualize_data("output/collated_answers.txt", 1)
+visualize_data("output/collated_answers.txt",1)
 visualize_data("output/collated_answers.txt", 2)
