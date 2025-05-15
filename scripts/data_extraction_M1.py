@@ -7,8 +7,7 @@ def extract_answers_sequence(string_file_path):
     i = 0 
 
     with open(string_file_path, 'r', encoding = 'utf-8') as file:
-        survey = fil
-        e.readlines()      # opens the file to read only 
+        survey = file.readlines()      # opens the file to read only 
 
 
     while i < len(survey):
